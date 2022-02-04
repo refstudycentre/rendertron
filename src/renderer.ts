@@ -99,7 +99,7 @@ export class Renderer {
     });
 
     if (isMobile) {
-      page.setUserAgent(MOBILE_USERAGENT);
+      await page.setUserAgent(MOBILE_USERAGENT);
     }
 
     if (timezoneId) {
@@ -118,9 +118,9 @@ export class Renderer {
 
     await page.setExtraHTTPHeaders(this.config.reqHeaders);
 
-    page.evaluateOnNewDocument('customElements.forcePolyfill = true');
-    page.evaluateOnNewDocument('ShadyDOM = {force: true}');
-    page.evaluateOnNewDocument('ShadyCSS = {shimcssproperties: true}');
+    await page.evaluateOnNewDocument('customElements.forcePolyfill = true');
+    await page.evaluateOnNewDocument('ShadyDOM = {force: true}');
+    await page.evaluateOnNewDocument('ShadyCSS = {shimcssproperties: true}');
 
     await page.setRequestInterception(true);
 
@@ -257,7 +257,7 @@ export class Renderer {
     });
 
     if (isMobile) {
-      page.setUserAgent(MOBILE_USERAGENT);
+      await page.setUserAgent(MOBILE_USERAGENT);
     }
 
     await page.setRequestInterception(true);
