@@ -226,7 +226,7 @@ root. Available configuration options:
 
 An example config file specifying a memory cache, with a 2 hour expiration, and a maximum of 50 entries
 
-```javascript
+```json
 {
     "cache": "memory",
     "cacheConfig": {
