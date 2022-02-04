@@ -148,7 +148,7 @@ export class Rendertron {
       return;
     }
 
-    const mobileVersion = 'mobile' in ctx.query ? true : false;
+    const mobileVersion = 'mobile' in ctx.query;
 
     const serialized = await this.renderer.serialize(
       url,
@@ -185,7 +185,7 @@ export class Rendertron {
       height: Number(ctx.query['height']) || this.config.height,
     };
 
-    const mobileVersion = 'mobile' in ctx.query ? true : false;
+    const mobileVersion = 'mobile' in ctx.query;
 
     try {
       const img = await this.renderer.screenshot(
