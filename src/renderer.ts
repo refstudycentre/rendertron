@@ -277,7 +277,7 @@ export class Renderer {
     let response: puppeteer.HTTPResponse | null = null;
 
     try {
-      // Navigate to page. Wait until there are no oustanding network requests.
+      // Navigate to page. Wait until there are no outstanding network requests.
       response = await page.goto(url, {
         timeout: this.config.timeout,
         waitUntil: 'networkidle0',
